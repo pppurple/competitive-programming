@@ -1,5 +1,5 @@
-#include<iostream>
-#include<algorithm>
+#include <algorithm>
+#include <iostream>
 using namespace std;
 static const int MAX = 200000;
 
