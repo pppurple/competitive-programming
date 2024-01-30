@@ -80,4 +80,6 @@ int main() {
         cout << "Not stable";
     }
     cout << endl;
+
+    return 0;
 }
