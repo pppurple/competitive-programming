@@ -40,6 +40,22 @@ void print(char Suit[], char Num[], int N) {
     cout << endl;
 }
 
+bool compare(char S1[], char N1[], char S2[], char N2[], int N) {
+    std::string s1;
+    std::string s2;
+    for (int i = 0; i < N; i++) {
+        s1 += S1[i];
+        s1 += N1[i];
+        s2 += S2[i];
+        s2 += N2[i];
+    }
+    if (s1 == s2) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 int main() {
     int N;
     char Suit1[36];
@@ -53,9 +69,15 @@ int main() {
     std::copy(std::begin(Num1), std::end(Num1), std::begin(Num2));
 
     bubbleSort(Suit1, Num1, N);
-    cout << "Stable";
     selectionSort(Suit2, Num2, N);
 
     print(Suit1, Num1, N);
+    cout << "Stable" << endl;
     print(Suit2, Num2, N);
+    if (compare(Suit1, Num1, Suit2, Num2, N)) {
+        cout << "Stable";
+    } else {
+        cout << "Not stable";
+    }
+    cout << endl;
 }
