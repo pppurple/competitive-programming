@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
 int insertionSort(int A[], int n, int g, int cnt) {
@@ -17,10 +18,17 @@ int insertionSort(int A[], int n, int g, int cnt) {
 
 int shellSort(int A[], int n) {
     int cnt = 0;
-    int m = 3;
+
+    int v = n;
+    std::vector<int> G;
+    G.push_back(v);
+    while (v > 1) {
+        v = v / 2;
+        G.push_back(v);
+    }
+    int m = G.size();
     cout << m << endl;
 
-    int G[] = {4, 3, 1};
     for (int i = 0; i < m; i++) {
         if (i) cout << " ";
         cout << G[i];
